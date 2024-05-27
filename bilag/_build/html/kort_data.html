@@ -1,0 +1,875 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Kort &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'kort_data';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Datobaseret Beregning af Dødsfald &amp; Mandskab" href="total_crew_count.html" />
+    <link rel="prev" title="Erhvervsbaseret Fordeling af Dødsfald" href="data.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduktion
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pakker.html">Programbiblioteker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Erhvervsbaseret Fordeling af Dødsfald</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Kort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="total_crew_count.html">Datobaseret Beregning af Dødsfald &amp; Mandskab</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fkort_data.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/kort_data.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Kort</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="kort">
+<h1>Kort<a class="headerlink" href="#kort" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">folium</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Longitude&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="mf">12.6382256</span><span class="p">,</span> <span class="mf">12.6445770</span><span class="p">,</span> <span class="mf">12.6535034</span><span class="p">,</span> <span class="mf">12.6562500</span><span class="p">,</span> <span class="mf">12.6342773</span><span class="p">,</span> <span class="mf">12.6260376</span><span class="p">,</span> <span class="mf">12.6370239</span><span class="p">,</span> <span class="mf">12.6445770</span><span class="p">,</span> <span class="mf">12.6177979</span><span class="p">,</span> 
+        <span class="mf">12.4310303</span><span class="p">,</span> <span class="mf">12.3760986</span><span class="p">,</span> <span class="mf">12.3651123</span><span class="p">,</span> <span class="mf">12.3486328</span><span class="p">,</span> <span class="mf">12.2772217</span><span class="p">,</span> <span class="mf">11.9970703</span><span class="p">,</span> <span class="mf">11.7224121</span><span class="p">,</span> <span class="mf">11.4642334</span><span class="p">,</span> <span class="mf">11.3269043</span><span class="p">,</span> 
+        <span class="mf">11.1346436</span><span class="p">,</span> <span class="mf">10.9368896</span><span class="p">,</span> <span class="mf">10.5963135</span><span class="p">,</span> <span class="mf">10.0469971</span><span class="p">,</span> <span class="mf">9.5196533</span><span class="p">,</span> <span class="mf">9.0472412</span><span class="p">,</span> <span class="mf">8.5473633</span><span class="p">,</span> <span class="mf">8.1298828</span><span class="p">,</span> <span class="mf">7.8991699</span><span class="p">,</span> <span class="mf">7.7893066</span><span class="p">,</span> 
+        <span class="mf">7.0422363</span><span class="p">,</span> <span class="mf">5.9106445</span><span class="p">,</span> <span class="mf">4.7570801</span><span class="p">,</span> <span class="mf">4.0209961</span><span class="p">,</span> <span class="mf">3.4826660</span><span class="p">,</span> <span class="mf">2.6806641</span><span class="p">,</span> <span class="mf">2.0214844</span><span class="p">,</span> <span class="mf">1.4831543</span><span class="p">,</span> <span class="mf">0.7580566</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3076172</span><span class="p">,</span> 
+        <span class="o">-</span><span class="mf">1.0437012</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.9665527</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.7465820</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.5815430</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.4165039</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.3833008</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.8337402</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.9873047</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.3056641</span><span class="p">,</span> 
+        <span class="o">-</span><span class="mf">9.5251465</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.2392578</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.0195313</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.7446289</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.7001953</span><span class="p">,</span> <span class="o">-</span><span class="mf">14.8974609</span><span class="p">,</span> <span class="o">-</span><span class="mf">17.9077148</span><span class="p">,</span> <span class="o">-</span><span class="mf">18.7646484</span><span class="p">,</span> 
+        <span class="o">-</span><span class="mf">18.8525391</span><span class="p">,</span> <span class="o">-</span><span class="mf">17.0507813</span><span class="p">,</span> <span class="o">-</span><span class="mf">14.1064453</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.1074219</span><span class="p">,</span> <span class="mf">2.5048828</span><span class="p">,</span> <span class="mf">8.4814453</span><span class="p">,</span> <span class="mf">10.6787109</span><span class="p">,</span> <span class="mf">13.5351563</span><span class="p">,</span> <span class="mf">16.3916016</span><span class="p">,</span> 
+        <span class="mf">20.3466797</span><span class="p">,</span> <span class="mf">25.5322266</span><span class="p">,</span> <span class="mf">30.0585938</span><span class="p">,</span> <span class="mf">33.4423828</span><span class="p">,</span> <span class="mf">36.5625000</span><span class="p">,</span> <span class="mf">39.0673828</span><span class="p">,</span> <span class="mf">42.4511719</span><span class="p">,</span> <span class="mf">44.5605469</span><span class="p">,</span> <span class="mf">50.8007813</span><span class="p">,</span> 
+        <span class="mf">61.0839844</span><span class="p">,</span> <span class="mf">68.6206055</span><span class="p">,</span> <span class="mf">75.6518555</span><span class="p">,</span> <span class="mf">82.5952148</span><span class="p">,</span> <span class="mf">84.3090820</span><span class="p">,</span> <span class="mf">84.2211914</span><span class="p">,</span> <span class="mf">82.9907227</span><span class="p">,</span> <span class="mf">79.8537827</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;Latitude&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="mf">55.6872139</span><span class="p">,</span> <span class="mf">55.7031289</span><span class="p">,</span> <span class="mf">55.7245966</span><span class="p">,</span> <span class="mf">55.8074555</span><span class="p">,</span> <span class="mf">55.8714586</span><span class="p">,</span> <span class="mf">55.9261246</span><span class="p">,</span> <span class="mf">55.9837868</span><span class="p">,</span> <span class="mf">56.0194943</span><span class="p">,</span> <span class="mf">56.0439521</span><span class="p">,</span> 
+        <span class="mf">56.2311385</span><span class="p">,</span> <span class="mf">56.4139014</span><span class="p">,</span> <span class="mf">56.5988146</span><span class="p">,</span> <span class="mf">56.7828273</span><span class="p">,</span> <span class="mf">56.8910033</span><span class="p">,</span> <span class="mf">56.9868976</span><span class="p">,</span> <span class="mf">57.0735890</span><span class="p">,</span> <span class="mf">57.2077101</span><span class="p">,</span> <span class="mf">57.3324517</span><span class="p">,</span> 
+        <span class="mf">57.5394168</span><span class="p">,</span> <span class="mf">57.7012122</span><span class="p">,</span> <span class="mf">57.8330549</span><span class="p">,</span> <span class="mf">57.8037981</span><span class="p">,</span> <span class="mf">57.6718484</span><span class="p">,</span> <span class="mf">57.5187729</span><span class="p">,</span> <span class="mf">57.3265212</span><span class="p">,</span> <span class="mf">57.0706030</span><span class="p">,</span> <span class="mf">56.7828273</span><span class="p">,</span> 
+        <span class="mf">56.4806954</span><span class="p">,</span> <span class="mf">55.6155890</span><span class="p">,</span> <span class="mf">54.9523857</span><span class="p">,</span> <span class="mf">54.0529390</span><span class="p">,</span> <span class="mf">53.2257684</span><span class="p">,</span> <span class="mf">52.4292223</span><span class="p">,</span> <span class="mf">51.6657414</span><span class="p">,</span> <span class="mf">51.3306116</span><span class="p">,</span> <span class="mf">51.0275763</span><span class="p">,</span> 
+        <span class="mf">50.5762603</span><span class="p">,</span> <span class="mf">50.2050333</span><span class="p">,</span> <span class="mf">50.0782945</span><span class="p">,</span> <span class="mf">49.9582884</span><span class="p">,</span> <span class="mf">49.7457813</span><span class="p">,</span> <span class="mf">49.5038095</span><span class="p">,</span> <span class="mf">49.1457836</span><span class="p">,</span> <span class="mf">48.7561888</span><span class="p">,</span> <span class="mf">48.1880635</span><span class="p">,</span> 
+        <span class="mf">46.4378569</span><span class="p">,</span> <span class="mf">44.6998977</span><span class="p">,</span> <span class="mf">43.3571382</span><span class="p">,</span> <span class="mf">38.5137883</span><span class="p">,</span> <span class="mf">36.5978891</span><span class="p">,</span> <span class="mf">32.8611323</span><span class="p">,</span> <span class="mf">29.1905328</span><span class="p">,</span> <span class="mf">26.8044608</span><span class="p">,</span> <span class="mf">23.5237001</span><span class="p">,</span> 
+        <span class="mf">19.5183755</span><span class="p">,</span> <span class="mf">11.9533494</span><span class="p">,</span> <span class="mf">7.1444988</span><span class="p">,</span> <span class="mf">4.3464113</span><span class="p">,</span> <span class="mf">2.7235831</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.6674415</span><span class="p">,</span> <span class="o">-</span><span class="mf">15.4960324</span><span class="p">,</span> <span class="o">-</span><span class="mf">25.5622650</span><span class="p">,</span> <span class="o">-</span><span class="mf">32.2499745</span><span class="p">,</span> 
+        <span class="o">-</span><span class="mf">35.8534396</span><span class="p">,</span> <span class="o">-</span><span class="mf">37.2653100</span><span class="p">,</span> <span class="o">-</span><span class="mf">36.8796206</span><span class="p">,</span> <span class="o">-</span><span class="mf">35.3890500</span><span class="p">,</span> <span class="o">-</span><span class="mf">32.8057447</span><span class="p">,</span> <span class="o">-</span><span class="mf">28.9985318</span><span class="p">,</span> <span class="o">-</span><span class="mf">24.3270765</span><span class="p">,</span> <span class="o">-</span><span class="mf">16.8045411</span><span class="p">,</span> 
+        <span class="o">-</span><span class="mf">12.3829283</span><span class="p">,</span> <span class="o">-</span><span class="mf">9.9688506</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.1462428</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.3316442</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.3598891</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4174768</span><span class="p">,</span> <span class="mf">4.2149431</span><span class="p">,</span> <span class="mf">7.6238869</span><span class="p">,</span> <span class="mf">9.1671787</span><span class="p">,</span> 
+        <span class="mf">10.9130441</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;coordinates.xlsx&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;coordinates.xlsx&#39;</span><span class="p">)</span>
+<span class="n">line_points</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;Longitude&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="n">min_lat</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">max_lat</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">min_lon</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">max_lon</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[(</span><span class="n">min_lat</span> <span class="o">+</span> <span class="n">max_lat</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">min_lon</span> <span class="o">+</span> <span class="n">max_lon</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">folium</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
+    <span class="n">tiles</span><span class="o">=</span><span class="s1">&#39;https://services.arcgisonline.com/arcgis/rest/services/World_Shaded_Relief/MapServer/tile/</span><span class="si">{z}</span><span class="s1">/</span><span class="si">{y}</span><span class="s1">/</span><span class="si">{x}</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">attr</span><span class="o">=</span><span class="s1">&#39;Esri World Shaded Relief&#39;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Vintage&#39;</span><span class="p">,</span>
+    <span class="n">control</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+<span class="n">folium</span><span class="o">.</span><span class="n">PolyLine</span><span class="p">(</span><span class="n">line_points</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+<span class="n">m</span><span class="o">.</span><span class="n">fit_bounds</span><span class="p">([[</span><span class="n">min_lat</span><span class="p">,</span> <span class="n">min_lon</span><span class="p">],</span> <span class="p">[</span><span class="n">max_lat</span><span class="p">,</span> <span class="n">max_lon</span><span class="p">]])</span>
+
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -> Trust Notebook</span><iframe srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    
+    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+    
+        &lt;script&gt;
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        &lt;/script&gt;
+    
+    &lt;style&gt;html, body {width: 100%;height: 100%;margin: 0;padding: 0;}&lt;/style&gt;
+    &lt;style&gt;#map {position:absolute;top:0;bottom:0;right:0;left:0;}&lt;/style&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://code.jquery.com/jquery-3.7.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/&gt;
+    
+            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
+            &lt;style&gt;
+                #map_0c7135f173211d92f1a679aa41c9d44a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            &lt;/style&gt;
+        
+&lt;/head&gt;
+&lt;body&gt;
+    
+    
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_0c7135f173211d92f1a679aa41c9d44a&quot; &gt;&lt;/div&gt;
+        
+&lt;/body&gt;
+&lt;script&gt;
+    
+    
+            var map_0c7135f173211d92f1a679aa41c9d44a = L.map(
+                &quot;map_0c7135f173211d92f1a679aa41c9d44a&quot;,
+                {
+                    center: [10.28387245, 32.72827145],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 3,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b4aaf3853faf267a2a1c6d6b56bd00ba = L.tileLayer(
+                &quot;https://services.arcgisonline.com/arcgis/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}&quot;,
+                {&quot;attribution&quot;: &quot;Esri World Shaded Relief&quot;, &quot;detectRetina&quot;: false, &quot;maxNativeZoom&quot;: 18, &quot;maxZoom&quot;: 18, &quot;minZoom&quot;: 0, &quot;noWrap&quot;: false, &quot;opacity&quot;: 1, &quot;subdomains&quot;: &quot;abc&quot;, &quot;tms&quot;: false}
+            );
+        
+    
+            tile_layer_b4aaf3853faf267a2a1c6d6b56bd00ba.addTo(map_0c7135f173211d92f1a679aa41c9d44a);
+        
+    
+            var poly_line_f05d1ac57c5709d96d7aa2f6ab176a79 = L.polyline(
+                [[55.6872139, 12.6382256], [55.7031289, 12.644577], [55.7245966, 12.6535034], [55.8074555, 12.65625], [55.8714586, 12.6342773], [55.9261246, 12.6260376], [55.9837868, 12.6370239], [56.0194943, 12.644577], [56.0439521, 12.6177979], [56.2311385, 12.4310303], [56.4139014, 12.3760986], [56.5988146, 12.3651123], [56.7828273, 12.3486328], [56.8910033, 12.2772217], [56.9868976, 11.9970703], [57.073589, 11.7224121], [57.2077101, 11.4642334], [57.3324517, 11.3269043], [57.5394168, 11.1346436], [57.7012122, 10.9368896], [57.8330549, 10.5963135], [57.8037981, 10.0469971], [57.6718484, 9.5196533], [57.5187729, 9.0472412], [57.3265212, 8.5473633], [57.070603, 8.1298828], [56.7828273, 7.8991699], [56.4806954, 7.7893066], [55.615589, 7.0422363], [54.9523857, 5.9106445], [54.052939, 4.7570801], [53.2257684, 4.0209961], [52.4292223, 3.482666], [51.6657414, 2.6806641], [51.3306116, 2.0214844], [51.0275763, 1.4831543], [50.5762603, 0.7580566], [50.2050333, -0.3076172], [50.0782945, -1.0437012], [49.9582884, -1.9665527], [49.7457813, -2.746582], [49.5038095, -3.581543], [49.1457836, -4.4165039], [48.7561888, -5.3833008], [48.1880635, -5.8337402], [46.4378569, -6.9873047], [44.6998977, -8.3056641], [43.3571382, -9.5251465], [38.5137883, -10.2392578], [36.5978891, -10.0195313], [32.8611323, -10.7446289], [29.1905328, -12.7001953], [26.8044608, -14.8974609], [23.5237001, -17.9077148], [19.5183755, -18.7646484], [11.9533494, -18.8525391], [7.1444988, -17.0507813], [4.3464113, -14.1064453], [2.7235831, -10.1074219], [-7.6674415, 2.5048828], [-15.4960324, 8.4814453], [-25.562265, 10.6787109], [-32.2499745, 13.5351563], [-35.8534396, 16.3916016], [-37.26531, 20.3466797], [-36.8796206, 25.5322266], [-35.38905, 30.0585938], [-32.8057447, 33.4423828], [-28.9985318, 36.5625], [-24.3270765, 39.0673828], [-16.8045411, 42.4511719], [-12.3829283, 44.5605469], [-9.9688506, 50.8007813], [-8.1462428, 61.0839844], [-5.3316442, 68.6206055], [-3.3598891, 75.6518555], [-0.4174768, 82.5952148], [4.2149431, 84.309082], [7.6238869, 84.2211914], [9.1671787, 82.9907227], [10.9130441, 79.8537827]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;grey&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;grey&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 0.7, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_0c7135f173211d92f1a679aa41c9d44a);
+        
+    
+            map_0c7135f173211d92f1a679aa41c9d44a.fitBounds(
+                [[-37.26531, -18.8525391], [57.8330549, 84.309082]],
+                {}
+            );
+        
+&lt;/script&gt;
+&lt;/html&gt;" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">death_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;Book1.xlsx&#39;</span><span class="p">)</span>
+<span class="n">line_points</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;Longitude&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="n">min_lat</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">max_lat</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Latitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">min_lon</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">max_lon</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Longitude&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+
+<span class="c1"># Design</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[(</span><span class="n">min_lat</span> <span class="o">+</span> <span class="n">max_lat</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="n">min_lon</span> <span class="o">+</span> <span class="n">max_lon</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span><span class="p">],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">tiles</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">TileLayer</span><span class="p">(</span>
+    <span class="n">tiles</span><span class="o">=</span><span class="s1">&#39;https://services.arcgisonline.com/arcgis/rest/services/World_Shaded_Relief/MapServer/tile/</span><span class="si">{z}</span><span class="s1">/</span><span class="si">{y}</span><span class="s1">/</span><span class="si">{x}</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">attr</span><span class="o">=</span><span class="s1">&#39;Esri World Shaded Relief&#39;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Vintage&#39;</span><span class="p">,</span>
+    <span class="n">control</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+
+<span class="c1"># Linje</span>
+<span class="n">folium</span><span class="o">.</span><span class="n">PolyLine</span><span class="p">(</span><span class="n">line_points</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">fit_bounds</span><span class="p">([[</span><span class="n">min_lat</span><span class="p">,</span> <span class="n">min_lon</span><span class="p">],</span> <span class="p">[</span><span class="n">max_lat</span><span class="p">,</span> <span class="n">max_lon</span><span class="p">]])</span>
+
+<span class="c1"># Placering af &quot;plots&quot;</span>
+<span class="n">journey_duration</span> <span class="o">=</span> <span class="mi">175</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">death_data</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">days</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;days_taken&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">days</span> <span class="o">&lt;=</span> <span class="n">journey_duration</span><span class="p">:</span>
+        <span class="n">position_index</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">days</span> <span class="o">/</span> <span class="n">journey_duration</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">line_points</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">death_location</span> <span class="o">=</span> <span class="n">line_points</span><span class="p">[</span><span class="n">position_index</span><span class="p">]</span>
+        <span class="n">folium</span><span class="o">.</span><span class="n">CircleMarker</span><span class="p">(</span>
+            <span class="n">location</span><span class="o">=</span><span class="n">death_location</span><span class="p">,</span>
+            <span class="n">radius</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+            <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">fill_color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><span style="color:#565656">Make this Notebook Trusted to load map: File -> Trust Notebook</span><iframe srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    
+    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+    
+        &lt;script&gt;
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        &lt;/script&gt;
+    
+    &lt;style&gt;html, body {width: 100%;height: 100%;margin: 0;padding: 0;}&lt;/style&gt;
+    &lt;style&gt;#map {position:absolute;top:0;bottom:0;right:0;left:0;}&lt;/style&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://code.jquery.com/jquery-3.7.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css&quot;/&gt;
+    
+            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
+            &lt;style&gt;
+                #map_d11114c25dead3a86d10ec3d317f5a55 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            &lt;/style&gt;
+        
+&lt;/head&gt;
+&lt;body&gt;
+    
+    
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_d11114c25dead3a86d10ec3d317f5a55&quot; &gt;&lt;/div&gt;
+        
+&lt;/body&gt;
+&lt;script&gt;
+    
+    
+            var map_d11114c25dead3a86d10ec3d317f5a55 = L.map(
+                &quot;map_d11114c25dead3a86d10ec3d317f5a55&quot;,
+                {
+                    center: [6.855914966666667, 21.818847633333334],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 3,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4c807d33f9d86a796204269cd077c503 = L.tileLayer(
+                &quot;https://services.arcgisonline.com/arcgis/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}&quot;,
+                {&quot;attribution&quot;: &quot;Esri World Shaded Relief&quot;, &quot;detectRetina&quot;: false, &quot;maxNativeZoom&quot;: 18, &quot;maxZoom&quot;: 18, &quot;minZoom&quot;: 0, &quot;noWrap&quot;: false, &quot;opacity&quot;: 1, &quot;subdomains&quot;: &quot;abc&quot;, &quot;tms&quot;: false}
+            );
+        
+    
+            tile_layer_4c807d33f9d86a796204269cd077c503.addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+    
+            var poly_line_9287361b5fc91f66f5ebd6e354efe551 = L.polyline(
+                [[55.6872139, 12.6382256], [55.7031289, 12.644577], [55.7245966, 12.6535034], [55.8074555, 12.65625], [55.8714586, 12.6342773], [55.9261246, 12.6260376], [55.9837868, 12.6370239], [56.0194943, 12.644577], [56.0439521, 12.6177979], [56.2311385, 12.4310303], [56.4139014, 12.3760986], [56.5988146, 12.3651123], [56.7828273, 12.3486328], [56.8910033, 12.2772217], [56.9868976, 11.9970703], [57.073589, 11.7224121], [57.2077101, 11.4642334], [57.3324517, 11.3269043], [57.5394168, 11.1346436], [57.7012122, 10.9368896], [57.8330549, 10.5963135], [57.8037981, 10.0469971], [57.6718484, 9.5196533], [57.5187729, 9.0472412], [57.3265212, 8.5473633], [57.070603, 8.1298828], [56.7828273, 7.8991699], [56.4806954, 7.7893066], [55.615589, 7.0422363], [54.9523857, 5.9106445], [54.052939, 4.7570801], [53.2257684, 4.0209961], [52.4292223, 3.482666], [51.6657414, 2.6806641], [51.3306116, 2.0214844], [51.0275763, 1.4831543], [50.5762603, 0.7580566], [50.2050333, -0.3076172], [50.0782945, -1.0437012], [49.9582884, -1.9665527], [49.7457813, -2.746582], [49.5038095, -3.581543], [49.1457836, -4.4165039], [48.7561888, -5.3833008], [48.1880635, -5.8337402], [46.4378569, -6.9873047], [44.6998977, -8.3056641], [43.3571382, -9.5251465], [38.5137883, -10.2392578], [36.5978891, -10.0195313], [32.8611323, -10.7446289], [29.1905328, -12.7001953], [26.8044608, -14.8974609], [23.5237001, -17.9077148], [19.5183755, -18.7646484], [11.9533494, -18.8525391], [7.1444988, -17.0507813], [4.3464113, -14.1064453], [2.7235831, -10.1074219], [-7.6674415, 2.5048828], [-15.4960324, 8.4814453], [-25.562265, 10.6787109], [-32.2499745, 13.5351563], [-35.8534396, 16.3916016], [-37.26531, 20.3466797], [-36.8796206, 25.5322266], [-35.38905, 30.0585938], [-32.8057447, 33.4423828], [-28.9985318, 36.5625], [-24.3270765, 39.0673828], [-16.8045411, 42.4511719], [-12.3829283, 44.5605469], [-9.9688506, 50.8007813], [-8.1462428, 61.0839844], [-5.3316442, 68.6206055], [-3.3598891, 75.6518555], [-0.4174768, 82.5952148], [4.2149431, 84.309082], [7.6238869, 84.2211914], [9.1671787, 82.9907227], [10.9130441, 79.8537827]],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;grey&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: false, &quot;fillColor&quot;: &quot;grey&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;noClip&quot;: false, &quot;opacity&quot;: 0.7, &quot;smoothFactor&quot;: 1.0, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+    
+            map_d11114c25dead3a86d10ec3d317f5a55.fitBounds(
+                [[-37.26531, -18.8525391], [57.8330549, 84.309082]],
+                {}
+            );
+        
+    
+            var circle_marker_9ef18b7c4dc5d084519ef025b22b239c = L.circleMarker(
+                [54.9523857, 5.9106445],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+    
+            var circle_marker_c71b05c2cf17e60486c6f5ab57d072d8 = L.circleMarker(
+                [52.4292223, 3.482666],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+    
+            var circle_marker_5bd8b5675153e9d124b6dd654ab5ee38 = L.circleMarker(
+                [-32.8057447, 33.4423828],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+    
+            var circle_marker_6e65b14e117c48a42672717d8e3e6e09 = L.circleMarker(
+                [54.9523857, 5.9106445],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+    
+            var circle_marker_3db106dfd708ac4218ac04c475c41251 = L.circleMarker(
+                [-32.2499745, 13.5351563],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+    
+            var circle_marker_3755a4ee216749d68ba59193ec2fba02 = L.circleMarker(
+                [4.3464113, -14.1064453],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+    
+            var circle_marker_65eb7a3b0a803625f85396e7c36cb3de = L.circleMarker(
+                [-37.26531, 20.3466797],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+    
+            var circle_marker_275d1dea55dd40bc4eb36d6050b05107 = L.circleMarker(
+                [57.6718484, 9.5196533],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+    
+            var circle_marker_a16c9475b9e2effe48da3502c18c4eeb = L.circleMarker(
+                [-35.38905, 30.0585938],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+    
+            var circle_marker_f418af63ed36e2d9cd0e5effef21a1b9 = L.circleMarker(
+                [-35.38905, 30.0585938],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+    
+            var circle_marker_3d528fa803cc7803e0cc874e9887d0c5 = L.circleMarker(
+                [55.8074555, 12.65625],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+    
+            var circle_marker_c213b914a255208e19889636bcddef31 = L.circleMarker(
+                [51.6657414, 2.6806641],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+    
+            var circle_marker_06f90e333bb5d01e30f847fa66649384 = L.circleMarker(
+                [44.6998977, -8.3056641],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+    
+            var circle_marker_f5c719216cfcee4c1f064ca79d1c14d7 = L.circleMarker(
+                [38.5137883, -10.2392578],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+    
+            var circle_marker_6b112e5b1df9b32d571569c0aa66211f = L.circleMarker(
+                [38.5137883, -10.2392578],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+    
+            var circle_marker_5d07064b625eb5fb899af9e2e396667e = L.circleMarker(
+                [38.5137883, -10.2392578],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+    
+            var circle_marker_0c25d0d76a23b8558e59a2d94c71934f = L.circleMarker(
+                [9.1671787, 82.9907227],
+                {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;red&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;red&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 5, &quot;stroke&quot;: true, &quot;weight&quot;: 3}
+            ).addTo(map_d11114c25dead3a86d10ec3d317f5a55);
+        
+&lt;/script&gt;
+&lt;/html&gt;" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div></div></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="data.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Erhvervsbaseret Fordeling af Dødsfald</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="total_crew_count.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Datobaseret Beregning af Dødsfald &amp; Mandskab</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
